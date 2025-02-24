@@ -3,32 +3,45 @@ import java.util.Scanner;
 public class Contador {
     public static void main(String[] args) {
 
-        Scanner terminal = new Scanner(System.in);
-        System.out.println("Digite o primeiro parâmetro");
-        int parametroUm = terminal.nextInt();
-        System.out.println("Digite o segundo parâmetro");
-        int parametroDois = terminal.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        try {
-            //chamando o método contendo a lógica de contagem
-            contar(parametroUm, parametroDois);
+        // Entrada do saldo inicial
+        double saldoInicial = scanner.nextDouble();
 
-        }catch (ParametrosInvalidosException exception) {
-            exception.errorParametros();
-            //imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
+        // TODO: Na linha abaixo, implemente a entrada das três transações:
+        double deposito = scanner.nextDouble();
+
+        double saqueInicial = scanner.nextDouble();
+
+        double saqueFinal = scanner.nextDouble();
+
+
+        // TODO: Na linha abaixo, realize o cálculo do saldo final:
+        double saldoFinal = saldoInicial;
+
+        if (deposito >= 0.00) {
+            saldoFinal = saldoFinal + deposito;
+        } else  {
+            saldoFinal = saldoFinal - deposito;
         }
 
-    }
-    static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
-        if (parametroDois < parametroUm) {
-            throw new ParametrosInvalidosException();
+        if (saqueInicial >= 0.00) {
+            saldoFinal = saldoFinal + saqueInicial;
+        } else {
+            saldoFinal = saldoFinal - saqueInicial;
         }
 
-        int contagem = parametroDois - parametroUm;
-        //realizar o for para imprimir os números com base na variável contagem
-        for (int i=1; i<=contagem; i++){
-            System.out.println(i);
+        if (saqueFinal >= 0.00) {
+            saldoFinal = saldoFinal + saqueFinal;
+        } else {
+            saldoFinal = saldoFinal - saqueFinal;
         }
+
+
+        // Saldo final
+        System.out.printf("%.2f\n", saldoFinal);
+
+        scanner.close();
     }
 
 }
