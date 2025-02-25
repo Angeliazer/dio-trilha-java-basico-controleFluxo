@@ -6,18 +6,18 @@ public class Contador {
         Scanner scanner = new Scanner(System.in);
 
         // Entrada do saldo inicial
-        double saldoInicial = scanner.nextDouble();
+        float saldoInicial = scanner.nextFloat();
 
         // TODO: Na linha abaixo, implemente a entrada das três transações:
-        double transacao1 = scanner.nextDouble();
+        float transacao1 = scanner.nextFloat();
 
-        double transacao2 = scanner.nextDouble();
+        float transacao2 = scanner.nextFloat();
 
-        double transacao3 = scanner.nextDouble();
+        float transacao3 = scanner.nextFloat();
 
 
         // TODO: Na linha abaixo, realize o cálculo do saldo final:
-        double saldoFinal = saldoInicial;
+        float saldoFinal = saldoInicial;
 
         saldoFinal += transacao1;
         saldoFinal += transacao2;
