@@ -9,34 +9,19 @@ public class Contador {
         double saldoInicial = scanner.nextDouble();
 
         // TODO: Na linha abaixo, implemente a entrada das três transações:
-        double deposito = scanner.nextDouble();
+        double transacao1 = scanner.nextDouble();
 
-        double saqueInicial = scanner.nextDouble();
+        double transacao2 = scanner.nextDouble();
 
-        double saqueFinal = scanner.nextDouble();
+        double transacao3 = scanner.nextDouble();
 
 
         // TODO: Na linha abaixo, realize o cálculo do saldo final:
         double saldoFinal = saldoInicial;
 
-        if (deposito >= 0.00) {
-            saldoFinal = saldoFinal + deposito;
-        } else  {
-            saldoFinal = saldoFinal - deposito;
-        }
-
-        if (saqueInicial >= 0.00) {
-            saldoFinal = saldoFinal + saqueInicial;
-        } else {
-            saldoFinal = saldoFinal - saqueInicial;
-        }
-
-        if (saqueFinal >= 0.00) {
-            saldoFinal = saldoFinal + saqueFinal;
-        } else {
-            saldoFinal = saldoFinal - saqueFinal;
-        }
-
+        saldoFinal += transacao1;
+        saldoFinal += transacao2;
+        saldoFinal += transacao3;
 
         // Saldo final
         System.out.printf("%.2f\n", saldoFinal);
